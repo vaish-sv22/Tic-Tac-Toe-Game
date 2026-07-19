@@ -194,24 +194,9 @@ docker rm -f ticgame
 bash
 docker rmi tic-tac-toe
 
-
 ---
 
-## Project Structure
-
-text
-Tic-Tac-Toe-Game/
-│── index.html
-│── style.css
-│── script.js
-│── Dockerfile
-└── .dockerignore
-
----
-
-## Deployment Screenshot
-
-Add screenshots of the following:
+## Final Deployment 
 
 - Docker image build (`docker build`)
 - Docker container running (`docker ps`)
