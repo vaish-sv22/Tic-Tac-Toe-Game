@@ -153,43 +153,43 @@ The Tic Tac Toe game will be available in your browser.
 
 # Docker Commands
 
-### Build Image
+### 1.Build Image
 
 bash
 docker build -t tic-tac-toe .
 
 
-### Run Container
+### 2.Run Container
 
 bash
 docker run -d -p 8080:80 --name ticgame tic-tac-toe
 
 
-### View Running Containers
+### 3.View Running Containers
 
 bash
 docker ps
 
 
-### Stop Container
+### 4.Stop Container
 
 bash
 docker stop ticgame
 
 
-### Start Container
+### 5.Start Container
 
 bash
 docker start ticgame
 
 
-### Remove Container
+### 6.Remove Container
 
 bash
 docker rm -f ticgame
 
 
-### Remove Docker Image
+### 7.Remove Docker Image
 
 bash
 docker rmi tic-tac-toe
