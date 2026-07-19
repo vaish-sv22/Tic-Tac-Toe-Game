@@ -44,16 +44,175 @@ Tic-Tac-Toe-Game/
 * Arrays and functions
 * Game logic implementation
 
-## Future Improvements
+# 🐳 Docker Deployment
 
-* Single-player mode with AI
-* Scoreboard
-* Sound effects
-* Dark mode
-* Responsive animations
+Follow the steps below to run the Tic Tac Toe game using Docker.
 
-## Author
+## Prerequisites
 
-**Vaishnavi S V**
+- Docker Desktop installed
+- Docker Engine running
 
-GitHub: https://github.com/vaish-sv22
+Verify Docker installation:
+
+bash
+docker --version
+docker info
+
+
+---
+
+## Step 1: Clone the Repository
+
+bash
+git clone https://github.com/vaish-sv22/Tic-Tac-Toe-Game.git
+cd Tic-Tac-Toe-Game
+
+
+---
+
+## Step 2: Create a Dockerfile
+
+Create a file named **Dockerfile** in the project root and add:
+
+dockerfile
+FROM nginx:alpine
+
+COPY . /usr/share/nginx/html
+
+EXPOSE 80
+
+
+---
+
+## Step 3: Create a `.dockerignore` File
+
+text
+.git
+.gitignore
+README.md
+
+
+---
+
+## Step 4: Build the Docker Image
+
+bash
+docker build -t tic-tac-toe .
+
+
+Expected Output:
+
+text
+Successfully built xxxxxxxxx
+Successfully tagged tic-tac-toe:latest
+
+
+---
+
+## Step 5: Run the Docker Container
+
+bash
+docker run -d -p 8080:80 --name ticgame tic-tac-toe
+
+
+Expected Output:
+
+text
+<Container_ID>
+
+
+---
+
+## Step 6: Verify the Running Container
+
+bash
+docker ps
+
+
+Example Output:
+
+text
+CONTAINER ID   IMAGE         STATUS         PORTS
+1e31a16ed129   tic-tac-toe   Up 25 seconds  0.0.0.0:8080->80/tcp
+
+
+---
+
+## Step 7: Access the Application
+
+Open your browser and visit:
+
+
+http://localhost:8080
+
+
+The Tic Tac Toe game will be available in your browser.
+
+---
+
+# Docker Commands
+
+### Build Image
+
+bash
+docker build -t tic-tac-toe .
+
+
+### Run Container
+
+bash
+docker run -d -p 8080:80 --name ticgame tic-tac-toe
+
+
+### View Running Containers
+
+bash
+docker ps
+
+
+### Stop Container
+
+bash
+docker stop ticgame
+
+
+### Start Container
+
+bash
+docker start ticgame
+
+
+### Remove Container
+
+bash
+docker rm -f ticgame
+
+
+### Remove Docker Image
+
+bash
+docker rmi tic-tac-toe
+
+
+---
+
+## Project Structure
+
+text
+Tic-Tac-Toe-Game/
+│── index.html
+│── style.css
+│── script.js
+│── Dockerfile
+└── .dockerignore
+
+---
+
+## Deployment Screenshot
+
+Add screenshots of the following:
+
+- Docker image build (`docker build`)
+- Docker container running (`docker ps`)
+- Browser showing `http://localhost:8080`
